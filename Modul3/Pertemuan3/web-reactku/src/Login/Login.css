@@ -1,0 +1,57 @@
+.body_top{
+    text-align: center;    
+}
+.body_login {
+    margin: 0 auto;
+  border: 1px solid black;
+  align-items: center;
+  width: 350px;
+  height: 500px;
+  text-align: center;  
+}
+.body_input{
+    margin: 0 auto;
+    padding-top: 30px;
+}
+label.nameinput{
+    font-size: 15pt;
+    font-weight: bold;
+    padding-right: 5px;
+}
+label.namepw{
+    font-size: 15pt;
+    font-weight: bold;
+    padding-right: 10px;
+}
+label.checkbox{
+    font-size: 13pt;
+    font-weight: bold;
+    padding-left: 3px;
+}
+input {
+    text-align: center;
+}
+.button {
+    border: none;
+    color: white;
+    padding: 20px 125px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 25px 2px;
+    cursor: pointer;
+  }
+  .button_bawah {
+    border: none;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 9px;
+    margin: 70px 2px;
+    cursor: pointer;
+  }
+.button1 {background-color: #4CAF50;}
+.button2 {background-color: red;}
