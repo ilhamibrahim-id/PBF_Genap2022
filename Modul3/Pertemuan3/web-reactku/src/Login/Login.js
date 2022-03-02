@@ -13,15 +13,12 @@ const Login = () => {
                         <input placeholder="Masukan Username"></input>
                         <label for="fname" class="namepw">Password</label>
                         <input placeholder="Masukan Password Anda"></input></div>                                                
-                    <button class="button button1">Login</button>                                            
-                </form>
-                <input type="checkbox"></input><label class="checkbox">Remember Me</label>
-                <br/>
+                    <button class="button button1">Login</button><br />                                            
+                    <input type="checkbox"></input><label class="checkbox">Remember Me</label>
+                </form>                
                 <button class="button_bawah button2">Cancel</button>                                                            
             </div>
         </div>
-
     );
 }
-
 export default Login;
