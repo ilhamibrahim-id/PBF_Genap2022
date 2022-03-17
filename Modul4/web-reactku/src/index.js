@@ -5,9 +5,10 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import BlogPost from './container/BlogPost/BlogPost';
 import reportWebVitals from './reportWebVitals';
+import Tugas from './Tugas/Tugas'
 
 ReactDOM.render(
-  <BlogPost />,
+  <Tugas />,
   document.getElementById('content')
 );
 
