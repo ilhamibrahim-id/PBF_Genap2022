@@ -230,35 +230,45 @@
 
 // P4
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useParams,
-    useRouteMatch,
-    useHistory,
-    useLocation,
-    Redirect
-  } from "react-router-dom";
-  
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  useRouteMatch,
+  useHistory,
+  useLocation,
+  Redirect
+} from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Nav from 'react-bootstrap/Nav';
+import { Container } from 'react-bootstrap';
+import { Alert } from "react-bootstrap";
+import Navbar from 'react-bootstrap/Navbar';
+import { Card } from "react-bootstrap";
+import { ListGroup } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import { ListGroupItem } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 export default function AuthExample() {
   return (
     <Router>
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="/home">Batoka Store</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="/home"><b>Home</b></Nav.Link>
+            <Nav.Link href="/private"><AuthButton /></Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
       <div>
-        <AuthButton />
-
-        <ul>
-          <li>
-            <Link to="/public">Public Page</Link>
-          </li>
-          <li>
-            <Link to="/private">Private Page</Link>
-          </li>
-        </ul>
 
         <Switch>
-          <Route path="/public">
-            <PublicPage />
+          <Route path="/home">
+            <Home />
           </Route>
           <Route path="/login">
             <LoginPage />
@@ -290,18 +300,15 @@ function AuthButton() {
   let { from } = location.state || { from: { pathname: "/" } };
 
   return fakeAuth.isAuthenticated ? (
-    <p>
-      Welcome!{" "}
-      <button
-        onClick={() => {
-          fakeAuth.signout(() => history.push(from));
-        }}
-      >
-        Sign out
-      </button>
-    </p>
+    <b
+      onClick={() => {
+        fakeAuth.signout(() => history.push(from));
+      }}
+    >
+      Sign out
+    </b>
   ) : (
-    <p>You are not logged in.</p>
+    <b>Produk</b>
   );
 }
 
@@ -325,19 +332,174 @@ function PrivateRoute({ children, ...rest }) {
   );
 }
 
-function PublicPage() {
+function Home() {
   return (
     <div>
-      <h3>Public</h3>
+    <Container>
+      <Row>
+        <Col><Card style={{ width: 'full' }}>
+        <Card.Img variant="top" src="https://img.freepik.com/free-vector/flat-sale-banner-with-photo_23-2149026968.jpg?w=1380&t=st=1648112128~exp=1648112728~hmac=f068bea50c99e19c4723f49472eefc4ae3d3c77e91d9dd6859600748c0b59a90" />
+      </Card></Col>
+      </Row>
+    </Container>
+    <Container>
+      <Row>
+        <Col>
+      <Form>
+      <br />
+      <h3 align="center">Masukan Kritik dan Saran Anda</h3>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+          <Form.Check type="checkbox" label="Check me out" />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+      </Col>
+      </Row>
+      </Container>
     </div>
   );
 }
 
 function ProtectedPage() {
   return (
-    <div>
-      <h3>Private</h3>
-    </div>
+    <Container>
+      <br />
+      <Row>
+        <Col> <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+          <Card.Body>
+            <Card.Title>Card Title</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the bulk of
+              the card's content.
+            </Card.Text>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroupItem>Cras justo odio</ListGroupItem>
+            <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+            <ListGroupItem>Vestibulum at eros</ListGroupItem>
+          </ListGroup>
+          <Card.Body>
+            <Card.Link href="#">Card Link</Card.Link>
+            <Card.Link href="#">Another Link</Card.Link>
+          </Card.Body>
+        </Card></Col>
+        <Col> <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+          <Card.Body>
+            <Card.Title>Card Title</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the bulk of
+              the card's content.
+            </Card.Text>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroupItem>Cras justo odio</ListGroupItem>
+            <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+            <ListGroupItem>Vestibulum at eros</ListGroupItem>
+          </ListGroup>
+          <Card.Body>
+            <Card.Link href="#">Card Link</Card.Link>
+            <Card.Link href="#">Another Link</Card.Link>
+          </Card.Body>
+        </Card></Col>
+        <Col>
+          <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the bulk of
+                the card's content.
+              </Card.Text>
+            </Card.Body>
+            <ListGroup className="list-group-flush">
+              <ListGroupItem>Cras justo odio</ListGroupItem>
+              <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+              <ListGroupItem>Vestibulum at eros</ListGroupItem>
+            </ListGroup>
+            <Card.Body>
+              <Card.Link href="#">Card Link</Card.Link>
+              <Card.Link href="#">Another Link</Card.Link>
+            </Card.Body>
+          </Card></Col>
+      </Row>
+      <br />
+      <Row>
+        <Col> <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+          <Card.Body>
+            <Card.Title>Card Title</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the bulk of
+              the card's content.
+            </Card.Text>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroupItem>Cras justo odio</ListGroupItem>
+            <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+            <ListGroupItem>Vestibulum at eros</ListGroupItem>
+          </ListGroup>
+          <Card.Body>
+            <Card.Link href="#">Card Link</Card.Link>
+            <Card.Link href="#">Another Link</Card.Link>
+          </Card.Body>
+        </Card></Col>
+        <Col> <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+          <Card.Body>
+            <Card.Title>Card Title</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the bulk of
+              the card's content.
+            </Card.Text>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroupItem>Cras justo odio</ListGroupItem>
+            <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+            <ListGroupItem>Vestibulum at eros</ListGroupItem>
+          </ListGroup>
+          <Card.Body>
+            <Card.Link href="#">Card Link</Card.Link>
+            <Card.Link href="#">Another Link</Card.Link>
+          </Card.Body>
+        </Card></Col>
+        <Col>
+          <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the bulk of
+                the card's content.
+              </Card.Text>
+            </Card.Body>
+            <ListGroup className="list-group-flush">
+              <ListGroupItem>Cras justo odio</ListGroupItem>
+              <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+              <ListGroupItem>Vestibulum at eros</ListGroupItem>
+            </ListGroup>
+            <Card.Body>
+              <Card.Link href="#">Card Link</Card.Link>
+              <Card.Link href="#">Another Link</Card.Link>
+            </Card.Body>
+          </Card></Col>
+      </Row>
+    </Container>
   );
 }
 
@@ -354,8 +516,18 @@ function LoginPage() {
 
   return (
     <div>
-      <p>You must log in to view the page at {from.pathname}</p>
-      <button onClick={login}>Log in</button>
+      <Alert variant="success">
+        <Alert.Heading>Halo, senang bertemu dengan anda</Alert.Heading>
+        <p>
+          Batoka store hadir dikalangan masyarakat untuk memenuhi kebutuhan dalam sehari hari, batoka shop
+          menjual sepatu dengan bahan yang paling bagus di indonesia dan pastinya produk yang kami jual
+          original dari anak bangsa
+        </p>
+        <hr />
+        <p className="mb-0">
+          sebelum lanjut melihat produk kami izinkan silahkan login terlebih dahulu <button variant="warning" onClick={login}>Log in</button>{' '}
+        </p>
+      </Alert>
     </div>
   );
 }
