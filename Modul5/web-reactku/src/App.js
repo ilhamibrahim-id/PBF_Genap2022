@@ -276,6 +276,9 @@ export default function AuthExample() {
           <PrivateRoute path="/private">
             <ProtectedPage />
           </PrivateRoute>
+          <Route path="/">
+            <Home />
+          </Route>
         </Switch>
       </div>
     </Router>
@@ -297,7 +300,7 @@ const fakeAuth = {
 function AuthButton() {
   let history = useHistory();
   let location = useLocation();
-  let { from } = location.state || { from: { pathname: "/" } };
+  let { from } = location.state || { from: { pathname: "/link/" } };
 
   return fakeAuth.isAuthenticated ? (
     <b
@@ -373,131 +376,74 @@ function Home() {
     </div>
   );
 }
-
 function ProtectedPage() {
   return (
     <Container>
       <br />
       <Row>
         <Col> <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+          <Card.Img variant="top" src="https://pingpoint.co.id/media/images/KEMAYORAN_FASHION_INI_15_PILIHAN_SEPATU_LOKAL_.width-500.jpg" />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>Sepatu Cats</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
+              Rp. 350.000,-
             </Card.Text>
           </Card.Body>
-          <ListGroup className="list-group-flush">
-            <ListGroupItem>Cras justo odio</ListGroupItem>
-            <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-            <ListGroupItem>Vestibulum at eros</ListGroupItem>
-          </ListGroup>
-          <Card.Body>
-            <Card.Link href="#">Card Link</Card.Link>
-            <Card.Link href="#">Another Link</Card.Link>
-          </Card.Body>
-        </Card></Col>
+        </Card>
+        </Col>
         <Col> <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+          <Card.Img variant="top" src="https://img.lovepik.com/free-png/20210918/lovepik-leisure-sports-shoes-png-image_400272778_wh1200.png" />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>Sepatu Vens</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
+              Rp. 450.000,-
             </Card.Text>
           </Card.Body>
-          <ListGroup className="list-group-flush">
-            <ListGroupItem>Cras justo odio</ListGroupItem>
-            <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-            <ListGroupItem>Vestibulum at eros</ListGroupItem>
-          </ListGroup>
+        </Card>
+        </Col>
+        <Col> <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="https://tamazhequ.files.wordpress.com/2013/04/sepatu-kets.jpg" />
           <Card.Body>
-            <Card.Link href="#">Card Link</Card.Link>
-            <Card.Link href="#">Another Link</Card.Link>
+            <Card.Title>Sepatu Keren</Card.Title>
+            <Card.Text>
+              Rp. 250.000,-
+            </Card.Text>
           </Card.Body>
-        </Card></Col>
-        <Col>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-              </Card.Text>
-            </Card.Body>
-            <ListGroup className="list-group-flush">
-              <ListGroupItem>Cras justo odio</ListGroupItem>
-              <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-              <ListGroupItem>Vestibulum at eros</ListGroupItem>
-            </ListGroup>
-            <Card.Body>
-              <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
-            </Card.Body>
-          </Card></Col>
+        </Card>
+        </Col>
       </Row>
       <br />
       <Row>
         <Col> <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+          <Card.Img variant="top" src="https://cms.sehatq.com/public/img/article_img/beragam-tipe-sepatu-olahraga-wanita-mana-yang-harus-anda-pilih-1615871573.jpg" />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>Sepatu Kids</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
+              Rp. 350.000,-
             </Card.Text>
           </Card.Body>
-          <ListGroup className="list-group-flush">
-            <ListGroupItem>Cras justo odio</ListGroupItem>
-            <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-            <ListGroupItem>Vestibulum at eros</ListGroupItem>
-          </ListGroup>
-          <Card.Body>
-            <Card.Link href="#">Card Link</Card.Link>
-            <Card.Link href="#">Another Link</Card.Link>
-          </Card.Body>
-        </Card></Col>
+        </Card>
+        </Col>
         <Col> <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+          <Card.Img variant="top" src="https://cdn-2.tstatic.net/wartakota/foto/bank/images/sepatu-adidas-yeezy-boost-350-v2-black.jpg" />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>Sepatu Vens</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
+              Rp. 450.000,-
             </Card.Text>
           </Card.Body>
-          <ListGroup className="list-group-flush">
-            <ListGroupItem>Cras justo odio</ListGroupItem>
-            <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-            <ListGroupItem>Vestibulum at eros</ListGroupItem>
-          </ListGroup>
+        </Card>
+        </Col>
+        <Col> <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="https://cdn-2.tstatic.net/tribunnews/foto/bank/images/murah-dan-berkualitas-sepatu-pria-model-minimalis-karya-anak-ba_20210806_160940.jpg" />
           <Card.Body>
-            <Card.Link href="#">Card Link</Card.Link>
-            <Card.Link href="#">Another Link</Card.Link>
+            <Card.Title>Sepatu Girl</Card.Title>
+            <Card.Text>
+              Rp. 250.000,-
+            </Card.Text>
           </Card.Body>
-        </Card></Col>
-        <Col>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-              </Card.Text>
-            </Card.Body>
-            <ListGroup className="list-group-flush">
-              <ListGroupItem>Cras justo odio</ListGroupItem>
-              <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-              <ListGroupItem>Vestibulum at eros</ListGroupItem>
-            </ListGroup>
-            <Card.Body>
-              <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
-            </Card.Body>
-          </Card></Col>
+        </Card>
+        </Col>
       </Row>
     </Container>
   );
@@ -507,7 +453,7 @@ function LoginPage() {
   let history = useHistory();
   let location = useLocation();
 
-  let { from } = location.state || { from: { pathname: "/" } };
+  let { from } = location.state || { from: { pathname: "/link/" } };
   let login = () => {
     fakeAuth.authenticate(() => {
       history.replace(from);
