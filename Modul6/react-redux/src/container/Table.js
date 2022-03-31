@@ -67,7 +67,7 @@ class Table extends Component {
                                                 fontSize: "20pt",
                                                 marginRight: "20px"
                                             }}
-                                        />
+                                        /> delete
                                         <span
                                             className="fas fa-check-circle"
                                             onClick={() => this.props.toggleTodo(todo.id)}
